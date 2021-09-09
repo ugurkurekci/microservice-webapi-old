@@ -1,0 +1,60 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Category/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9000
+        }
+      ],
+      "UpstreamPathTemplate": "/category/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/api/Category/GetAll",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9000
+        }
+      ],
+      "UpstreamPathTemplate": "/c/GetAll",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/City/GetAll",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/ci/GetAll",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/City/{Id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/ci/{Id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+
+
+
+
+  ]
+}
