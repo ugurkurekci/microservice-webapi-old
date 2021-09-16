@@ -9,16 +9,21 @@ namespace Users.API.Business.Concrete
 {
     public class UserService : IUserService
     {
-        readonly IUserDal _userDal;
+        private readonly IUserDal _userDal;
+       
+        
+        
 
         public UserService(IUserDal userDal)
         {
             _userDal = userDal;
+           
+           
         }
 
         public User Login(string username, string email, string password)
         {
-            return _userDal.GetLogin(username, email, password);
+          return _userDal.GetLogin(username, email, password);                    
         }
 
         public void Register(User user)

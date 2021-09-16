@@ -3,11 +3,18 @@ using Core.Extensions;
 using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Category.API
+namespace Users.API
 {
     public class Startup
     {
@@ -21,17 +28,11 @@ namespace Category.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddDependencyResolvers(new ICoreModule[] {
             new CoreModule()
             });
             services.AddSwaggerDocument(configure => configure.Title = "Swagger Kontrol Birim Sistemi");
-
-
-
-
-
 
         }
 
@@ -43,7 +44,8 @@ namespace Category.API
                 app.UseDeveloperExceptionPage();
             }
 
-            //   app.UseHttpsRedirection();
+          //  app.UseHttpsRedirection();
+
             app.UseOpenApi();
             app.UseSwaggerUi3();
             app.UseRouting();

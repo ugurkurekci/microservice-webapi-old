@@ -27,6 +27,7 @@ namespace DataContext.Context
         public DbSet<Email> Email { get; set; }
         public DbSet<Phone> Phone { get; set; }
         public DbSet<User> User { get; set; }
+        public DbSet<UserLog> UserLog { get; set; }
 
 
 
